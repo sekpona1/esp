@@ -29,3 +29,5 @@ async def ocr1(file: bytes = File(...)):
     prediction = tesser(file)
     return prediction
 
+if __name__ == "__main__":
+    uvicorn.run(app, debug=True)
