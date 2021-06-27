@@ -23,6 +23,11 @@ def tesser(image):
 
 #Creation d'une api
 app=FastAPI()
+
+@app.get('/'):
+async def index():
+    return {"detail": "app working"}
+
 @app.post('/ocr_pred/')
 async def ocr1(file: bytes = File(...)):
     #image = Image.open(image)
